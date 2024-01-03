@@ -1,5 +1,3 @@
-package Doubts;
-
 import java.util.*;
 
 public class prime {

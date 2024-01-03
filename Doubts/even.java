@@ -1,5 +1,3 @@
-package Doubts;
-
 import java.util.*;
 
 public class even {
@@ -9,7 +7,7 @@ public class even {
 
     System.out.println("Enter a number: ");
     int n = sc.nextInt();
-    
+
     System.out.println(n % 2 == 0 ? "The number is even" : "The number is odd");
     sc.close();
   }
