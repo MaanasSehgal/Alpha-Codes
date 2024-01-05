@@ -13,6 +13,7 @@ public class hw11 {
 
       //numbers
       for (int j = 1; j <= 2 * i - 1; j++) {
+        //logic for when to add and when to subtract
         printEl = j > i ? printEl + 1 : printEl - 1;
         System.out.print(printEl + " ");
       }
