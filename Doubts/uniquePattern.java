@@ -2,7 +2,7 @@ public class uniquePattern {
 
   public static void main(String[] args) {
     int n = 5;
-    String space = "    ";
+    String space = "    ", star = "* ";
 
     for (int i = 1; i <= n; i++) {
       //spaces
@@ -10,7 +10,7 @@ public class uniquePattern {
         System.out.print(space);
       }
       for (int j = 1; j <= i; j++) {
-        System.out.print("* ");
+        System.out.print(star);
       }
       System.out.println();
     }
@@ -20,7 +20,7 @@ public class uniquePattern {
         System.out.print(space);
       }
       for (int j = 1; j <= i; j++) {
-        System.out.print("* ");
+        System.out.print(star);
       }
       System.out.println();
     }
