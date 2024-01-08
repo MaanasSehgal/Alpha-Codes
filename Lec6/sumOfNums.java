@@ -19,5 +19,6 @@ public class sumOfNums {
     int sum = calculateSum(num1, num2, num3);
 
     System.out.println("The sum is: " + sum);
+    sc.close();
   }
 }
