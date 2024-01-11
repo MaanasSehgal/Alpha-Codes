@@ -19,7 +19,7 @@ public class hw11 {
         } else {
           printEl -= 1;
         }
-        printEl = j > i ? printEl + 1 : printEl - 1;
+        // printEl = j > i ? printEl + 1 : printEl - 1;
         System.out.print(printEl + " ");
       }
       System.out.println();
