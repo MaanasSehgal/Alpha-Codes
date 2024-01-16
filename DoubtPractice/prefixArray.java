@@ -16,14 +16,14 @@ public class prefixArray {
 
         //max subarray sum
 
-        int maxSum = 0;
+        int maxSum = arr[0];
 
         for (int i = 0; i < n; i++) {
             int currSum = 0;
             for (int j = i; j < n; j++) {
                 currSum = i == 0 ? prefix[j] : prefix[j] - prefix[i - 1];
+                maxSum = Math.max(currSum, maxSum);
             }
-            maxSum = Math.max(currSum, maxSum);
         }
 
         System.out.println("Max sum by prefix is: " + maxSum);
