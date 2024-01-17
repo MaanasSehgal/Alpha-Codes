@@ -2,19 +2,19 @@ package DoubtPractice;
 
 public class trappedWaterAgain {
 
-    public static void findLeft(int left[], int heights[]) {
+    public static void calculateLeft(int left[], int heights[], int n) {
         left[0] = heights[0];
 
-        for (int i = 1; i < left.length; i++) {
-            left[i] = Math.max(left[i - 1], heights[i]);
+        for (int i = 1; i < n; i++) {
+            left[i] = Math.max(heights[i], left[i - 1]);
         }
     }
 
-    public static void findRight(int right[], int heights[]) {
-        right[right.length - 1] = heights[right.length - 1];
+    public static void calculateRight(int right[], int heights[], int n) {
+        right[n - 1] = heights[n - 1];
 
-        for (int i = right.length - 2; i >= 0; i--) {
-            right[i] = Math.max(right[i + 1], heights[i]);
+        for (int i = n - 2; i >= 0; i--) {
+            right[i] = Math.max(heights[i], right[i + 1]);
         }
     }
 
@@ -24,15 +24,14 @@ public class trappedWaterAgain {
         int left[] = new int[n];
         int right[] = new int[n];
 
-        findLeft(left, heights);
-        findRight(right, heights);
+        calculateLeft(left, heights, n);
+        calculateRight(right, heights, n);
 
         int trappedWater = 0;
 
         for (int i = 0; i < n; i++) {
-            int waterLevel = Math.min(left[i], right[i]);
-
-            trappedWater += (waterLevel - heights[i]) * width;
+            int waterlevel = Math.min(left[i], right[i]);
+            trappedWater += (waterlevel - heights[i]) * width;
         }
 
         return trappedWater;
@@ -40,6 +39,7 @@ public class trappedWaterAgain {
 
     public static void main(String args[]) {
         int heights[] = { 3, 6, 2, 0, 1, 4, 0, 0, 7, 2, 1 };
+        // int heights[] = { 1, 2, 3, 4, 5, 4, 3, 2, 1 };
         int width = 1;
 
         int trappedWater = findTrappedWater(heights, width);
