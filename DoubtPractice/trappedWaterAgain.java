@@ -38,7 +38,8 @@ public class trappedWaterAgain {
     }
 
     public static void main(String args[]) {
-        int heights[] = { 3, 6, 2, 0, 1, 4, 0, 0, 7, 2, 1 };
+        // int heights[] = { 3, 6, 2, 0, 1, 4, 0, 0, 7, 2, 1 };
+        int heights[] = { 4, 2, 0, 6, 3, 2, 5 };
         // int heights[] = { 1, 2, 3, 4, 5, 4, 3, 2, 1 };
         int width = 1;
 
