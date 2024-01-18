@@ -25,13 +25,35 @@ public class sorting {
             int min = i;
 
             for (int j = i + 1; j < n; j++) {
-                if (arr[min] > arr[j])  {
+                if (arr[min] > arr[j]) {
                     min = j;
                 }
             }
             int temp = arr[i];
             arr[i] = arr[min];
             arr[min] = temp;
+        }
+    }
+
+    public static void insertionSortArr(int arr[]) {
+        int n = 5;
+
+        for (int i = 1; i < n; i++) {
+            int curr = i;
+
+            while (curr > 0) {
+                if (arr[curr - 1] > arr[curr]) {
+                    //swap
+                    int temp = arr[curr];
+                    arr[curr] = arr[curr - 1];
+                    arr[curr - 1] = temp;
+
+                    //curr value decremented
+                    curr--;
+                } else {
+                    break;
+                }
+            }
         }
     }
 
@@ -44,8 +66,8 @@ public class sorting {
     }
 
     public static void main(String[] args) {
-        int arr[] = { 5, 4, 1, 3, 2 };
-        selectionSortArr(arr);
+        int arr[] = { 5, 4, 3, 2, 1 };
+        insertionSortArr(arr);
 
         printArr(arr);
     }
