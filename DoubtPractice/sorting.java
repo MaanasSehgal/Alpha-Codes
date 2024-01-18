@@ -1,7 +1,5 @@
 package DoubtPractice;
 
-import Lec10.insertionSort;
-
 public class sorting {
 
     public static void bubbleSortArr(int arr[]) {
