@@ -2,6 +2,14 @@ package Lec10;
 
 public class selectionSort {
 
+    public static void printArray(int arr[]) {
+        System.out.println();
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
     public static void sort(int arr[], int n) {
         for (int i = 0; i < n - 1; i++) {
             int minPos = i;
@@ -14,6 +22,7 @@ public class selectionSort {
             int temp = arr[minPos];
             arr[minPos] = arr[i];
             arr[i] = temp;
+            printArray(arr);
         }
     }
 
@@ -24,9 +33,6 @@ public class selectionSort {
 
         sort(arr, n);
 
-        for (int i = 0; i < n; i++) {
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println();
+        printArray(arr);
     }
 }
