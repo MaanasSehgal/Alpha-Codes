@@ -1,4 +1,3 @@
-package DoubtPractice;
 
 public class kadane {
 

@@ -1,5 +1,3 @@
-package DoubtPractice;
-
 public class stocks2 {
 
     public static int calculateMaxProfit(int stockData[]) {

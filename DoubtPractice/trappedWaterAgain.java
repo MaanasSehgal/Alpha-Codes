@@ -1,5 +1,3 @@
-package DoubtPractice;
-
 public class trappedWaterAgain {
 
     public static void calculateLeft(int left[], int heights[], int n) {
