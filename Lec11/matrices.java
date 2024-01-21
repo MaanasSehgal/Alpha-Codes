@@ -14,7 +14,6 @@ public class matrices {
                     System.out.println(
                         key + " found at cell (" + i + ", " + j + ")"
                     );
-
                     return true;
                 }
             }
