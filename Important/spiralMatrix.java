@@ -1,5 +1,3 @@
-package Lec11;
-
 import java.util.Scanner;
 
 public class spiralMatrix {
