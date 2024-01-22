@@ -1,3 +1,4 @@
+package Practice;
 public class stocks {
 
   public static void main(String[] args) {
