@@ -1,6 +1,6 @@
 package Important;
 
-public class sortingAgain {
+public class sortingAlgorithms {
 
     public static void printArray(int arr[], int n) {
         System.out.println();
