@@ -1,4 +1,3 @@
-package Practice;
 public class maxSubarraySum {
 
     public static void main(String[] args) {

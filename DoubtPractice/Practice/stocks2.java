@@ -1,4 +1,3 @@
-package Practice;
 public class stocks2 {
 
     public static int calculateMaxProfit(int stockData[]) {
