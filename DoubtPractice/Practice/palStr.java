@@ -1,3 +1,5 @@
+package Practice;
+
 public class palStr {
 
     public static boolean checkPalindrome(String str) {

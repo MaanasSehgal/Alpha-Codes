@@ -1,3 +1,5 @@
+package Practice;
+
 public class firstToUppercase {
 
     public static String firstLetterUppercase(String str) {

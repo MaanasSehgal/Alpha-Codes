@@ -1,3 +1,5 @@
+package Practice;
+
 public class strCmp {
 
     public static String compressString(String str) {

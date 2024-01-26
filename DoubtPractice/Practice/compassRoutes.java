@@ -1,3 +1,5 @@
+package Practice;
+
 public class compassRoutes {
 
     public static float findShortestDistance(String directions) {

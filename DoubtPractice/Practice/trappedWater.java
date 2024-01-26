@@ -1,3 +1,5 @@
+package Practice;
+
 public class trappedWater {
 
     public static void calculateLeftMax(int left[], int heights[]) {
