@@ -1,21 +1,21 @@
-public class methodOverriding {
+// public class methodOverriding {
 
-    public static void main(String[] args) {
-        Dear d = new Dear();
-        d.eat();
-    }
-}
+//     public static void main(String[] args) {
+//         Dear d = new Dear();
+//         d.eat();
+//     }
+// }
 
-class Animal {
+// class Animal {
 
-    void eat() {
-        System.out.println("Eats Anything");
-    }
-}
+//     void eat() {
+//         System.out.println("Eats Anything");
+//     }
+// }
 
-class Dear extends Animal {
+// class Dear extends Animal {
 
-    void eat() {
-        System.out.println("Eats grass");
-    }
-}
+//     void eat() {
+//         System.out.println("Eats grass");
+//     }
+// }

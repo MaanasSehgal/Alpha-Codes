@@ -1,18 +1,18 @@
-public class pq7 {
+// public class pq7 {
 
-    public static void main(String[] args) {
-        // Test t = new Test();
-        // t.changeB();
-        System.out.println(Test.a + Test.b);
-    }
-}
+//     public static void main(String[] args) {
+//         // Test t = new Test();
+//         // t.changeB();
+//         System.out.println(Test.a + Test.b);
+//     }
+// }
 
-class Test {
+// class Test {
 
-    static int a = 10;
-    static int b;
+//     static int a = 10;
+//     static int b;
 
-    static void changeB() {
-        b = a * 3;
-    }
-}
+//     static void changeB() {
+//         b = a * 3;
+//     }
+// }
