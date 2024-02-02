@@ -1,4 +1,3 @@
-package Practice;
 
 public class stocks2 {
 
