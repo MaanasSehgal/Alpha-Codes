@@ -40,7 +40,7 @@ public class mergeSorting3 {
             temp[k++] = arr[j++];
         }
 
-        //copy temp to arr
+        //copy temp to arr.
         for (k = 0, i = si; k < temp.length; k++, i++) {
             arr[i] = temp[k];
         }
