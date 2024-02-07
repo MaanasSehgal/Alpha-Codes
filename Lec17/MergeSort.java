@@ -16,12 +16,21 @@ public class MergeSort {
         int mid = si + (ei - si) / 2;
 
         //left
+        System.out.println();
+        System.out.print("Left: ");
+        printArr(arr);
         mergeSort(arr, si, mid);
 
         //right
+        System.out.println();
+        System.out.print("Right: ");
+        printArr(arr);
         mergeSort(arr, mid + 1, ei);
 
-        //merge
+        System.out.println();
+        System.out.print("Merge called: ");
+        printArr(arr);
+
         merge(arr, si, mid, ei);
     }
 
