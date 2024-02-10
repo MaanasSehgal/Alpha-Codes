@@ -1,8 +1,10 @@
-public class SudokuSolver {
+public class sudoku {
 
-    public static boolean sudokuSolver(int sudoku[][], int row, int col) {
-        //base case
-        if (row == 9) {
+    static final int n = 9;
+
+    public static boolean solveSudoku(int sudoku[][], int row, int col) {
+        //basecase
+        if (row == n) {
             return true;
         }
 
@@ -16,13 +18,13 @@ public class SudokuSolver {
         }
 
         if (sudoku[row][col] != 0) {
-            return sudokuSolver(sudoku, nextRow, nextCol);
+            return solveSudoku(sudoku, nextRow, nextCol);
         }
 
-        for (int digit = 1; digit <= 9; digit++) {
+        for (int digit = 1; digit <= n; digit++) {
             if (isSafe(sudoku, row, col, digit)) {
                 sudoku[row][col] = digit;
-                if (sudokuSolver(sudoku, nextRow, nextCol)) { //solution existed
+                if (solveSudoku(sudoku, nextRow, nextCol)) {
                     return true;
                 }
                 sudoku[row][col] = 0;
@@ -32,26 +34,26 @@ public class SudokuSolver {
     }
 
     public static boolean isSafe(int sudoku[][], int row, int col, int digit) {
-        // columns
-        for (int i = 0; i < 9; i++) {
+        //row
+        for (int i = 0; i < n; i++) {
             if (sudoku[i][col] == digit) {
                 return false;
             }
         }
 
-        //row
-        for (int j = 0; j < 9; j++) {
+        //col
+        for (int j = 0; j < n; j++) {
             if (sudoku[row][j] == digit) {
                 return false;
             }
         }
 
         //grid
-        int startingRow = (row / 3) * 3;
-        int startingCol = (col / 3) * 3;
+        int gridRowIdx = (row / 3) * 3;
+        int gridColIdx = (col / 3) * 3;
 
-        for (int i = startingRow; i < startingRow + 3; i++) {
-            for (int j = startingCol; j < startingCol + 3; j++) {
+        for (int i = gridRowIdx; i < gridRowIdx + 3; i++) {
+            for (int j = gridColIdx; j < gridColIdx + 3; j++) {
                 if (sudoku[i][j] == digit) {
                     return false;
                 }
@@ -61,31 +63,9 @@ public class SudokuSolver {
     }
 
     public static void printSudoku(int sudoku[][]) {
-        boolean linePrinted1 = true;
-        boolean linePrinted2 = true;
-
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 9; j++) {
-                if (j == 3 || j == 6) {
-                    System.out.print("| ");
-                }
-
-                if (i == 3 && linePrinted1) {
-                    linePrinted1 = false;
-                    for (int k = 0; k < 11; k++) {
-                        System.out.print("- ");
-                    }
-                    System.out.println();
-                }
-
-                if (i == 6 && linePrinted2) {
-                    linePrinted2 = false;
-                    for (int k = 0; k < 11; k++) {
-                        System.out.print("- ");
-                    }
-                    System.out.println();
-                }
-
+        System.out.println("----chess board----");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
                 System.out.print(sudoku[i][j] + " ");
             }
             System.out.println();
@@ -105,11 +85,11 @@ public class SudokuSolver {
             { 8, 2, 7, 0, 0, 9, 0, 1, 3 },
         };
 
-        if (sudokuSolver(sudoku, 0, 0)) {
+        if (solveSudoku(sudoku, 0, 0)) {
             printSudoku(sudoku);
-            System.out.println("Solution exists ");
+            System.out.println("\nSolution exists!");
         } else {
-            System.out.println("Solution doesn't exist");
+            System.out.println("Solution doesn't exist!");
         }
     }
 }
