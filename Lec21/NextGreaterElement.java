@@ -4,22 +4,7 @@ import java.util.*;
 
 public class NextGreaterElement {
 
-    // public static int[] findNextGreaterElement(int nums[]) {
-    //     int result [] = new int[nums.length];
-    //     Stack<Integer> stack = new Stack<>();
-
-    //     for (int i = nums.length - 1; i >= 0; i--) {
-    //         while (!stack.isEmpty() && stack.peek() <= nums[i]) {
-    //             stack.pop();
-    //         }
-
-    //         result[i] = stack.isEmpty() ? -1 : stack.peek();
-    //         stack.push(nums[i]);
-    //     }
-
-    //     return result;
-    // }
-
+    //OPTIMIZED O(n)
     public static int[] findNextGreaterElement(int nums[]) {
         Stack<Integer> s = new Stack<>();
         int nextGreater[] = new int[nums.length];
