@@ -1,13 +1,8 @@
-// 1. Round 1 Leaderboard
-// 2. Round 2 Leaderboard
-// 3. Both Merged Leaderboard
-
 {
     "status": "OK",
     "result": {
         "contest": {
             "id": 1918,
-            //name
             "name": "Codeforces Round 922 (Div. 2)",
             "type": "CF",
             "phase": "FINISHED",
@@ -87,7 +82,6 @@
                     "contestId": 1918,
                     "members": [
                         {
-                          //username
                             "handle": "alice_ssoi"
                         }
                     ],
@@ -96,14 +90,11 @@
                     "room": 30,
                     "startTimeSeconds": 1706625300
                 },
-                //rank
                 "rank": 1,
-                // point
                 "points": 10463.0,
                 "penalty": 0,
                 "successfulHackCount": 0,
                 "unsuccessfulHackCount": 0,
-                //problems count: bestSubmissionTime and points
                 "problemResults": [
                     {
                         "points": 480.0,
