@@ -32,22 +32,24 @@ public class ArrayQueue {
             if (front == -1) {
                 front = 0;
             }
-            rear = rear + 1 % size;
+            rear = (rear + 1) % size;
             arr[rear] = data;
         }
 
-        public void remove() {
+        public int remove() {
             if (isEmpty()) {
                 System.out.println("Queue is empty");
-                return;
+                return -1;
             }
             int res = arr[front];
 
+            //check if removing last element
             if (rear == front) {
                 rear = front = -1;
             } else {
                 front = (front + 1) % size;
             }
+            return res;
         }
 
         public int peek() {
@@ -64,6 +66,11 @@ public class ArrayQueue {
         q.add(1);
         q.add(2);
         q.add(3);
+
+        // System.out.println(q.remove());
+        // q.add(4);
+        // System.out.println(q.remove());
+        // q.add(5);
 
         while (!q.isEmpty()) {
             System.out.print(q.peek() + " ");
