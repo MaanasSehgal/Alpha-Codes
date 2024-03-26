@@ -13,7 +13,7 @@ public class StackUsing2Queues {
         }
 
         public void push(int data) {
-            if (!q1.isEmpty()) {
+            if (q1.isEmpty() == false) {
                 q1.add(data);
             } else {
                 q2.add(data);
@@ -26,7 +26,7 @@ public class StackUsing2Queues {
             }
             int top = -1;
 
-            if (!q1.isEmpty()) {
+            if (q1.isEmpty() == false) {
                 while (!q1.isEmpty()) {
                     top = q1.remove();
                     if (q1.isEmpty()) {

@@ -1,4 +1,4 @@
-package AllQuestionsPractice;
+
 
 public class searchInSorted2dMatrix {
 
