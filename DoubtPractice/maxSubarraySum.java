@@ -1,5 +1,3 @@
-
-
 public class maxSubarraySum {
 
     public static int bruteForce(int arr[], int n) {
