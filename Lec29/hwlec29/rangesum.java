@@ -47,7 +47,7 @@ public class rangesum {
         root.right.right = new Node(20);
 
         int m = 6, n = 11;
-        int ans = calcRangeSum(root, 6, 11);
+        int ans = calcRangeSum(root, m, n);
 
         System.out.println("Range sum: " + ans);
     }
