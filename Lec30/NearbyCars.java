@@ -1,5 +1,3 @@
-package Lec30;
-
 import java.util.PriorityQueue;
 
 public class NearbyCars {
