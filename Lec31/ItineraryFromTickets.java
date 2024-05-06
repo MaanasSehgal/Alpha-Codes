@@ -35,11 +35,11 @@ public class ItineraryFromTickets {
             map.put(tickets[i][0], tickets[i][1]);
         }
 
-        String start = getStart(map);
-        System.out.print(start);
-        for (String key : map.keySet()) {
-            System.out.print(" -> " + map.get(start));
-            start = map.get(start);
-        }
+        // String start = getStart(map);
+        // // System.out.print(start);
+        // // for (String key : map.keySet()) {
+        // //     System.out.print(" -> " + map.get(start));
+        // //     start = map.get(start);
+        // // }
     }
 }
