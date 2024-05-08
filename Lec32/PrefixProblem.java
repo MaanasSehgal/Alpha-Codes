@@ -1,67 +1,59 @@
 package Lec32;
 
 public class PrefixProblem {
-
     static class Node {
-        Node children[] = new Node[26];
+        Node[] children = new Node[26];
         boolean eow = false;
+        int freq;
 
         public Node() {
-            for (int i = 0; i < 26; i++) {
+            for (int i = 0; i < children.length; i++) {
                 children[i] = null;
             }
+            freq = 1;
         }
+
     }
 
     public static Node root = new Node();
 
-    public static void insert(String word) { // O(L)
+    public static void insert(String word) {
         Node curr = root;
-        for (int level = 0; level < word.length(); level++) {
-            int idx = word.charAt(level) - 'a';
+        for (int i = 0; i < word.length(); i++) {
+            int idx = word.charAt(i) - 'a';
             if (curr.children[idx] == null) {
                 curr.children[idx] = new Node();
+            } else {
+                curr.children[idx].freq++;
             }
             curr = curr.children[idx];
         }
         curr.eow = true;
     }
 
-    public static boolean search(String word) {
-        Node curr = root;
-        for (int level = 0; level < word.length(); level++) {
-            int idx = word.charAt(level) - 'a';
-            if (curr.children[idx] == null) {
-                return false;
-            }
-            curr = curr.children[idx];
-        }
-        return curr.eow;
-    }
-
-    public static boolean wordBreak(String key) {
-        if (key.length() == 0) {
-            return true;
+    public static void findPrefix(Node root, String ans) {
+        if (root == null) {
+            return;
         }
 
-        for (int i = 1; i <= key.length(); i++) {
-            // substring(beg, last excluded)
-            if (search(key.substring(0, i)) &&
-                    wordBreak(key.substring(i))) {
-                return true;
+        if (root.freq == 1) {
+            System.out.println(ans);
+            return;
+        }
+
+        for (int i = 0; i < root.children.length; i++) {
+            if (root.children[i] != null) {
+                findPrefix(root.children[i], ans + (char) (i + 'a'));
             }
         }
-        return false;
     }
 
     public static void main(String[] args) {
-        String words[] = { "i", "like", "sam", "samsung", "mobile", "ice" };
-        String key = "ilikesamsung";
-
-        for (int i = 0; i < words.length; i++) {
-            insert(words[i]);
+        String arr[] = { "zebra", "dog", "duck", "dove" };
+        for (int i = 0; i < arr.length; i++) {
+            insert(arr[i]);
         }
-
-        System.out.println(wordBreak(key));
+        root.freq = -1;
+        findPrefix(root, "");
     }
 }

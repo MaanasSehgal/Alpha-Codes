@@ -1,16 +1,16 @@
-package BluePrints;
+package Lec32;
 
-public class Trie {
-
+public class StartsWithProblem {
     static class Node {
-        Node children[] = new Node[26];
+        Node[] children = new Node[26];
         boolean eow = false;
 
         public Node() {
-            for (int i = 0; i < 26; i++) {
+            for (int i = 0; i < children.length; i++) {
                 children[i] = null;
             }
         }
+
     }
 
     public static Node root = new Node();
@@ -27,24 +27,24 @@ public class Trie {
         curr.eow = true;
     }
 
-    public static boolean search(String word) {
+    public static boolean startsWith(String prefix) {
         Node curr = root;
-        for (int level = 0; level < word.length(); level++) {
-            int idx = word.charAt(level) - 'a';
+        for (int i = 0; i < prefix.length(); i++) {
+            int idx = prefix.charAt(i) - 'a';
             if (curr.children[idx] == null) {
                 return false;
             }
             curr = curr.children[idx];
         }
-        return curr.eow;
+        return true;
     }
 
     public static void main(String[] args) {
-        String words[] = {};
-
-        for (int i = 0; i < words.length; i++) {
-            insert(words[i]);
+        String arr[] = { "apple", "app", "mango", "man", "woman" };
+        for (int i = 0; i < arr.length; i++) {
+            insert(arr[i]);
         }
 
+        System.out.println(startsWith("wom"));
     }
 }

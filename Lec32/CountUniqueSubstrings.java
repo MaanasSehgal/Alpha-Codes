@@ -1,6 +1,6 @@
-package BluePrints;
+package Lec32;
 
-public class Trie {
+public class CountUniqueSubstrings {
 
     static class Node {
         Node children[] = new Node[26];
@@ -39,12 +39,31 @@ public class Trie {
         return curr.eow;
     }
 
-    public static void main(String[] args) {
-        String words[] = {};
-
-        for (int i = 0; i < words.length; i++) {
-            insert(words[i]);
+    public static int countNodes(Node root) {
+        if (root == null) {
+            return 0;
         }
+
+        int count = 0;
+        for (int i = 0; i < 26; i++) {
+            if (root.children[i] != null) {
+                count += countNodes(root.children[i]);
+            }
+        }
+        return count + 1;
+    }
+
+    public static void main(String[] args) {
+        String str = "ababa";// ans = 10
+
+        // suffix -> insert in trie
+        for (int i = 0; i < str.length(); i++) {
+            String suffix = str.substring(i);
+            insert(suffix);
+        }
+
+        int count = countNodes(root);
+        System.out.println(count);
 
     }
 }
