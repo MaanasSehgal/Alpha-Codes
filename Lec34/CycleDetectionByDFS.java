@@ -1,8 +1,8 @@
-package Lec33;
+package Lec34;
 
 import java.util.*;
 
-public class DFS {
+public class CycleDetectionByDFS {
     static class Edge {
         int src;
         int dest;
@@ -44,29 +44,37 @@ public class DFS {
         graph[6].add(new Edge(6, 5, 1));
     }
 
-   public static void dfs(ArrayList<Edge> graph[]) {
-    int V = graph.length;
-    boolean visited[] = new boolean[V];
-    for (int i = 0; i < V; i++) {
-        if (!visited[i]) {
-            dfsUtil(graph, i, visited);
+    public static boolean detectCycle(ArrayList<Edge> graph[]) {
+        int V = graph.length;
+        boolean visited[] = new boolean[V];
+
+        for (int i = 0; i < V; i++) {
+            if (!visited[i]) {
+                if (detectCycleUtil(graph, i, visited, -1)) {
+                    return true;// cycle exists in one of the parts
+                }
+            }
         }
+        return false;
     }
-}
 
-
-    public static void dfsUtil(ArrayList<Edge> graph[], int curr, boolean visited[]) {
-        // visit
-        System.out.print(curr + " ");
+    public static boolean detectCycleUtil(ArrayList<Edge> graph[], int curr, boolean visited[], int parent) {
         visited[curr] = true;
 
-        // visit all unvisited neighbours
         for (int i = 0; i < graph[curr].size(); i++) {
             Edge e = graph[curr].get(i);
             if (!visited[e.dest]) {
-                dfsUtil(graph, e.dest, visited);
+                // case 3
+                if (detectCycleUtil(graph, e.dest, visited, curr)) {
+                    return true;
+                }
+            } else if (visited[e.dest] && e.dest != parent) {
+                // case 1
+                return true;
             }
+            // case2 -> do nothing -> continue
         }
+        return false;
     }
 
     public static void main(String[] args) {
@@ -74,6 +82,7 @@ public class DFS {
         @SuppressWarnings("unchecked")
         ArrayList<Edge> graph[] = new ArrayList[V];
         createGraph(graph);
-        dfs(graph);
+
+        System.out.println(detectCycle(graph));
     }
 }

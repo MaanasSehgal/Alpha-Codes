@@ -44,10 +44,17 @@ public class BFS {
         graph[6].add(new Edge(6, 5, 1));
     }
 
-    public static void bfs(ArrayList<Edge> graph[]) { // Time Complexity: O(V + E), Space Complexity: O(V)
-        Queue<Integer> q = new LinkedList<>();
+    public static void bfs(ArrayList<Edge> graph[]) {
         boolean visited[] = new boolean[graph.length];
+        for (int i = 0; i < graph.length; i++) {
+            if (!visited[i]) {
+                bfsUtil(graph, visited);
+            }
+        }
+    }
 
+    public static void bfsUtil(ArrayList<Edge> graph[], boolean visited[]) { // Time Complexity: O(V + E), Space Complexity: O(V)
+        Queue<Integer> q = new LinkedList<>();
         q.add(0);// source = 0
 
         while (!q.isEmpty()) {
