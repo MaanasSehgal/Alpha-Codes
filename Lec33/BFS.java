@@ -48,14 +48,14 @@ public class BFS {
         boolean visited[] = new boolean[graph.length];
         for (int i = 0; i < graph.length; i++) {
             if (!visited[i]) {
-                bfsUtil(graph, visited);
+                bfsUtil(graph, visited, i);
             }
         }
     }
 
-    public static void bfsUtil(ArrayList<Edge> graph[], boolean visited[]) { // Time Complexity: O(V + E), Space Complexity: O(V)
+    public static void bfsUtil(ArrayList<Edge> graph[], boolean visited[], int start) { // Time Complexity: O(V + E), Space Complexity: O(V)
         Queue<Integer> q = new LinkedList<>();
-        q.add(0);// source = 0
+        q.add(start);// source = start
 
         while (!q.isEmpty()) {
             int curr = q.remove();
