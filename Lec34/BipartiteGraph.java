@@ -1,6 +1,5 @@
-package Lec34;
-
 import java.util.*;
+import java.util.LinkedList;
 
 public class BipartiteGraph {
     static class Edge {
@@ -67,7 +66,7 @@ public class BipartiteGraph {
     }
 
     public static void main(String[] args) {
-        //if graph doesn't have cycles -> bipartite graph
+        // if graph doesn't have cycles -> bipartite graph
         int V = 5;
         @SuppressWarnings("unchecked")
         ArrayList<Edge> graph[] = new ArrayList[V];
