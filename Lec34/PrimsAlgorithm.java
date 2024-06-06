@@ -62,6 +62,7 @@ public class PrimsAlgorithm {
                 vis[curr.v] = true;
                 finalCost += curr.cost;
 
+                
                 // neighbours
                 for (int i = 0; i < graph[curr.v].size(); i++) {
                     Edge e = graph[curr.v].get(i);
