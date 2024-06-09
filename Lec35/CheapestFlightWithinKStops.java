@@ -44,9 +44,7 @@ public class CheapestFlightWithinKStops {
         createGraph(graph, flights);
 
         int dist[] = new int[n];
-        for (int i = 0; i < n; i++) {
-            dist[i] = Integer.MAX_VALUE;
-        }
+        Arrays.fill(dist, Integer.MAX_VALUE);
         dist[src] = 0;
 
         Queue<Info> q = new LinkedList<>();
@@ -66,7 +64,7 @@ public class CheapestFlightWithinKStops {
                 int v = e.dest;
                 int wt = e.wt;
 
-                if (dist[u] != Integer.MAX_VALUE && curr.cost + wt < dist[v]) {
+                if (curr.cost + wt < dist[v] && curr.stops <= k) {
                     dist[v] = curr.cost + wt;
                     q.add(new Info(v, dist[v], curr.stops + 1));
                 }
