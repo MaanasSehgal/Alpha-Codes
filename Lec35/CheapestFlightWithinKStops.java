@@ -60,7 +60,6 @@ public class CheapestFlightWithinKStops {
             // neighbours
             for (int i = 0; i < graph[curr.v].size(); i++) {
                 Edge e = graph[curr.v].get(i);
-                int u = e.src;
                 int v = e.dest;
                 int wt = e.wt;
 
