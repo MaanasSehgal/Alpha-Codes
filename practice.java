@@ -1,6 +1,4 @@
 
-import java.util.*;
-
 public class practice {
     public static int knapsack(int val[], int wt[], int W, int n) {
         int dp[][] = new int[n + 1][W + 1];
