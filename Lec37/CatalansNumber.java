@@ -3,6 +3,18 @@ package Lec37;
 import java.util.Arrays;
 
 public class CatalansNumber {
+    public static int findCat(int n) {
+        if (n <= 1) {
+            return 1;
+        }
+
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += findCat(i) * findCat(n - 1 - i);
+        }
+        return sum;
+    }
+
     public static int findCatalansNumber(int n, int dp[]) {
         if (dp[n] != -1) {
             return dp[n];
